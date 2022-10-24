@@ -26,11 +26,19 @@ interface User {
 }
 
 import express from 'express';
+const { Sequelize } = require('sequelize');
 const tempMatavimai = require('./data/matavimai.json');
 const tempStiprumas = require('./data/stiprumai.json');
 const tempVartotojai = require('./data/vartotojai.json');
 const stiprumai = tempStiprumas as Stiprumas[];
 const vartotojai = tempVartotojai as Vartotojas[];
+
+const sequelize = new Sequelize('LDB', 'stud', 'vLXCDmSG6EpEnhXX', {
+	host: 'seklys.ila.lt',
+	dialect: 'mariadb',
+});
+
+// https://www.digitalocean.com/community/tutorials/how-to-use-sequelize-with-node-js-and-mysql
 
 const app = express();
 app.use(express.json());
