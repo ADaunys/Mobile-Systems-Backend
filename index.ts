@@ -128,7 +128,7 @@ grid.forEach((row: number[]) => {
   console.log(row.join(""));
 });
 
-app.get("/startMap", (req, res) => {
+app.get("/startingMap", (req, res) => {
   let string = "";
   grid.forEach((row: number[]) => {
     string += row.join("") + "\n";
